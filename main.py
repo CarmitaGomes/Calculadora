@@ -23,6 +23,15 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
         else:
             print("Erro: Divisão por zero não é permitida.")
 
+    elif operador == '%':
+        if num2 != 0:
+            result = num1 % num2
+        else:
+            print("Erro: Divisão por zero não é permitida.")
+
+    elif operador == '**':
+        result = num1 ** num2
+
 
 
     return result
@@ -46,10 +55,22 @@ def calculadora_alternativa(num1: float, num2: float, operador: str) -> float:
         else:
             print("Erro: Divisão por zero não é permitida.")
 
+    elif operador == '%':
+        if num2 != 0:
+            return num1 % num2
+        else:
+            print("Erro: Divisão por zero não é permitida.")
+
+    elif operador == '**':
+        return num1 ** num2
+
     return float("nan")
 
 
 if __name__ == "__main__":
+
+            
+    print('Calculadora')
 
     continuar = 's'
 
@@ -59,7 +80,7 @@ if __name__ == "__main__":
             print('Calculadora')
 
             n1 = float(input('Introduza o 1º número: ')) 
-            op = input('Escolha o operador (+, -, *, /): ')
+            op = input('Escolha o operador (+, -, *, /, %, **): ')
             n2 = float(input('Introduza o 2º número: ')) 
 
             res = calculadora(n1, n2, op)
@@ -73,5 +94,4 @@ if __name__ == "__main__":
             
         continuar = input("\nDeseja continuar a calcular? (s/n): ")
 
-    os.system('cls' if os.name == 'nt' else 'clear')
     print('\nVolte sempre!\n')
