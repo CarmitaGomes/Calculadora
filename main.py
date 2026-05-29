@@ -13,22 +13,39 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
 
     return result
 
+def calculadora_alternativa(num1: float, num2: float, operador: str) -> float:
+    """
+    Segunda versão
+    """
+    if operador == '+':
+        return num1 + num2 
+        
+    return float("nan")
+
 
 if __name__ == "__main__":
 
-    while True:
+    continuar = 's'
+
+    while continuar.lower() == 's': 
         os.system('cls' if os.name == 'nt' else 'clear')
         try:
             print('Calculadora')
-            print('----------------------------------\n')
 
+            n1 = float(input('Introduza o 1º número: ')) 
+            op = input('Escolha o operador (+): ')
+            n2 = float(input('Introduza o 2º número: ')) 
+
+            res = calculadora(n1, n2, op)
+            
+            print(f'\nResultado: {res}')
 
         except ValueError:
-            print('Dados inválidos! -> Tente novamente!')
+            print('Dados inválidos! Tente novamente!')
             time.sleep(2)
 
-        except ZeroDivisionError:
-            print('Impossível dividir por zero! -> Tente novamente!')
-            time.sleep(2)
+            
+        continuar = input("\nDeseja continuar a calcular? (s/n): ")
 
+    os.system('cls' if os.name == 'nt' else 'clear')
     print('\nVolte sempre!\n')
