@@ -69,17 +69,16 @@ def calculadora_alternativa(num1: float, num2: float, operador: str) -> float:
 
 if __name__ == "__main__":
 
-            
+    os.system('cls' if os.name == 'nt' else 'clear') 
     print('Calculadora')
 
     continuar = 's'
 
     while continuar.lower() == 's': 
-        os.system('cls' if os.name == 'nt' else 'clear')
+        
         try:
-            print('Calculadora')
 
-            n1 = float(input('Introduza o 1º número: ')) 
+            n1 = float(input('\nIntroduza o 1º número: ')) 
             op = input('Escolha o operador (+, -, *, /, %, **): ')
             n2 = float(input('Introduza o 2º número: ')) 
 
@@ -93,5 +92,6 @@ if __name__ == "__main__":
 
             
         continuar = input("\nDeseja continuar a calcular? (s/n): ")
+        print('------------------------------------')
 
     print('\nVolte sempre!\n')
